@@ -1,0 +1,52 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX sdo: <https://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<https://w3id.org/profile/vocprez/validator>
+    a owl:Ontology ;
+    dcterms:created "2022-03-20"^^xsd:date ;
+    dcterms:creator <https://linked.data.gov.au/org/surround> ;
+    dcterms:modified "2022-03-20"^^xsd:date ;
+    dcterms:publisher <https://linked.data.gov.au/org/surround> ;
+    owl:versionIRI <https://w3id.org/profile/vocprez/validator/1.0> ;
+    owl:versionInfo "1.0" ;
+    skos:definition "SHACL validator for the VocPrez Profile"@en ;
+    skos:prefLabel "VocPrez Validator"@en ;
+.
+
+<https://linked.data.gov.au/org/surround>
+    a sdo:Organization ;
+    sdo:name "SURROUNT Australia Pty Ltd" ;
+    sdo:url "https://surroundaustralia.com"^^xsd:anyURI ;
+.
+
+<https://w3id.org/profile/vocprez/validator/Requirement-1>
+    a sh:NodeShape ;
+    sh:message "Requirement 1: Each SKOS Concept, ConceptScheme and Collection MUST provide exactly one identifier using the DCTERMS identifier property and typed as an XSD token" ;
+    sh:property [
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:datatype xsd:token ;
+            sh:path dcterms:identifier
+        ] ;
+    sh:targetClass
+        skos:Collection ,
+        skos:Concept ,
+        skos:ConceptScheme ;
+.
+
+<https://w3id.org/profile/vocprez/validator/Requirement-2>
+    a sh:NodeShape ;
+    sh:message "Requirement 2: Each SKOS Concept MUST indicate that it is within exactly one Concept Scheme by use of the SKOS inScheme property" ;
+    sh:property [
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path skos:inScheme
+        ] ;
+    sh:targetClass skos:Concept ;
+.

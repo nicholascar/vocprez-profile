@@ -1,0 +1,67 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix role: <http://www.w3.org/ns/dx/prof/role/> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+<https://w3id.org/profile/vocprez>
+    a prof:Profile ;
+    dcterms:created "2022-03-20"^^xsd:date ;
+    dcterms:creator <https://linked.data.gov.au/org/surround> ;
+    dcterms:modified "2022-03-20"^^xsd:date ;
+    dcterms:publisher <https://linked.data.gov.au/org/surround> ;
+    skos:definition """This is a profile of another profile, the VocPub Profile, which profiles the Simple Knowledge Organization System (SKOS).
+    
+This profile is implemented by SURROUND Australia to allow for the validation of vocabularies according to the needs of the VocPrez tool."""@en ;
+    owl:versionIRI <https://w3id.org/profile/vocprez/1.0> ;
+    owl:versionInfo "1.0" ;    
+    prof:hasResource 
+        <https://w3id.org/profile/vocprez/spec> ,
+        <https://w3id.org/profile/vocprez/validator> ,
+        <https://w3id.org/profile/vocprez/compound-validator> ,
+        <https://w3id.org/profile/vocprez/repo> ;
+    prof:isProfileOf <https://w3id.org/profile/vocpub> ;
+    prof:isTransitiveProfileOf <https://www.w3.org/TR/skos-reference/> ;
+    skos:prefLabel "VocPrez Profile" ;
+.
+    
+<https://w3id.org/profile/vocprez/spec>
+    skos:prefLabel "Specification Document"@en ;
+    dcterms:description "The normative, human-readable, listing of profile requirements"@en ;
+    dcterms:conformsTo <https://www.w3.org/TR/html52/> ;
+    dcterms:format "text/html" ;
+    prof:hasArtifact "https://w3id.org/profile/vocprez/spec"^^xsd:anyURI ;
+    prof:hasRole role:specification
+.
+
+<https://w3id.org/profile/vocprez/validator>
+    skos:prefLabel "Validator in SHACL"@en ;
+    dcterms:description "A SHACL Shapes file to be used to test the conformance of RDF data to this profile"@en ;
+    dcterms:conformsTo <https://www.w3.org/TR/shacl/> ;
+    dcterms:format "text/turtle" ;
+    prof:hasArtifact "https://w3id.org/profile/vocprez/validator"^^xsd:anyURI ;
+    prof:hasRole role:validation
+.
+
+<https://w3id.org/profile/vocprez/compound-validator>
+    skos:prefLabel "Compound Validator"@en ;
+    dcterms:description "This profile's validator combined with the validators of the profiles that it profiles."@en ;
+    dcterms:conformsTo <https://www.w3.org/TR/shacl/> ;
+    dcterms:format "text/turtle" ;
+    prof:hasArtifact "https://w3id.org/profile/vocprez/compound-validator"^^xsd:anyURI ;
+    prof:hasRole role:validation
+.
+
+<https://w3id.org/profile/vocprez/repo>
+    skos:prefLabel "Profile code repository"@en ;
+    dcterms:description "Code repository storing all Profile artifacts"@en ;
+    prof:hasArtifact "https://w3id.org/profile/vocprez/repo"^^xsd:anyURI ;
+    prof:hasRole role:repository
+.
+
+<https://linked.data.gov.au/org/surround> a sdo:Organization ;
+    sdo:name "SURROUND Australia Pty Ltd" ;
+    sdo:url "https://surroundaustralia.com"^^xsd:anyURI ;
+.

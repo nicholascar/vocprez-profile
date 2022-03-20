@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head lang="en">
+  <meta charset="UTF-8">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link href='//fonts.googleapis.com/css?family=Spartan:300,400' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Bebas+Neue:300,400' rel='stylesheet' type='text/css'>
+  <link href="style/surround.css" rel="stylesheet" type="text/css">
+  <title>VocPrez Profile - Spec</title>
+</head>
+<body>
+  <div class="header" style="grid-column:1;"></div>
+  <div id="header" class="header" style="grid-column:2; display:grid; grid-template-columns:180px auto; grid-template-rows:50% 50%;">
+    <div id="logo" style="grid-column:1; grid-row:1/3">
+      <a href="https://surroundaustralia.com">
+        <img alt="SURROUND Logo" style="width:300px; margin-top:10px" src="style/logo-white.144b0ef3.svg" /></a>
+    </div>
+  </div><!-- #header -->
+  <div class="header" style="grid-column:3;"></div>
+  <div id="content" style="grid-column:2;">
+    <h1>VocPrez Profile - Specification</h1>
+    <section id="metadata">
+      <dl>
+        <dt>URI</dt>
+        <dd><code><a href="https://w3id.org/profile/vocprez/spec">https://w3id.org/profile/vocprez/spec</a></code></dd>
+        <dt>Title</dt>
+        <dd>VocPrez Profile - Specification Document</dd>
+        <dt>Definition</dt>
+        <dd>This document specifies the VocPrez Profile. It is to be used to inform people about the requirements that need to be met by data claiming to conform to the profile.</dd>
+        <dt>Created</dt>
+        <dd>2022-03-20</dd>
+        <dt>Modified</dt>
+        <dd>2022-03-20</dd>
+        <dt>Creator</dt>
+        <dd><a href="https://linked.data.gov.au/org/surround">SURROUND Australia Pty Ltd</a></dd>
+        <dt>Publisher</dt>
+        <dd><a href="https://linked.data.gov.au/org/surround">SURROUND Australia Pty Ltd</a></dd>
+        <dt>Further metadata</dt>
+        <dd>This specification is part of the <em>VocPrez Profile</em>. See that profile's main document for License &amp; Rights information and other metadata not given here.</dd>
+        <dt>Profile URI</dt>
+        <dd><code><a href="https://w3id.org/profile/vocprez">https://w3id.org/profile/vocprez</a></code></dd>
+        <dt>License</dt>
+        <dd><a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a></dd>
+      </dl>
+    </section>
+    <section id="abstract">
+      <h2>Abstract</h2>
+      <p>
+        This is the specification document of the <a href="https://w3id.org/profile/vocprez">VocPrez Profile</a> which is a profile of another profile, the <a href="https://w3id.org/profile/vocpub">VocPub Profile</a>, which profiles the <a href="https://www.w3.org/TR/skos-reference/"></a>Simple Knowledge Organization System (SKOS)</a>.
+      </p>
+      <p>
+        This document specifies the requirements of data that must be met in order for that data to claim conformance to the VocPrez Profile.
+      </p>
+      <p>
+        This specification document is not to be used for testing conformance of RDF resoruces to this profile. That role belongs to the <em>validation</em> resources within this profile:
+      </p>
+      <ol>
+        <li><a href="https://w3id.org/profile/vocprez/validator">SHACL Validator</a></li>
+        <li><a href="https://w3id.org/profile/vocprez/compound-validator">Compound Validator</a></li>
+      </ol>
+      <p>
+        The first in the list above contains tests for this profile's unique requirements only. The second, the combination of this profile's and the VocPub profile's requirements.
+      </p>
+      <p>
+        For the list of all resources within this profile, see the profile definition:
+      </p>
+      <ul>
+        <li><a href="https://w3id.org/profile/vocprez">https://w3id.org/profile/vocprez</a></li>
+      </ul>
+    </section>
+    <section id="namespaces">
+      <h2>Namespaces</h2>
+      <p>
+        This document refers to elements of various ontologies by short codes using namespace prefixes. The prefixes and their corresponding namespaces' URIs are:
+      </p>
+      <dl>
+        <dt>dcterms</dt>
+        <dd><code>http://purl.org/dc/terms/</code></dd>
+        <dt>prof</dt>
+        <dd><code>http://www.w3.org/ns/dx/prof/</code></dd>
+        <dt>prov</dt>
+        <dd><code>http://www.w3.org/ns/prov#</code></dd>
+        <dt>sdo</dt>
+        <dd><code>https://schema.org/</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>rdfs</dt>
+        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>vocpub</dt>
+        <dd><code>https://w3id.org/profile/vocpub/</code></dd>        
+      </dl>
+    </section>
+    <section id="intro">
+      <h2>1. Introduction</h2>
+      <p>
+        The <a href="https://w3id.org/profile/vocpub">VocPub Profile</a> constrains the many ways in which the Simple Knowledge Organization System Reference (SKOS)<sup><a href="#skos">ref</a> may be used to formulate vocabularies. VocPub requires simplicity of vocab presentation - one vocab per file; all vocabs to consist of Concepts within a single Concept Scheme etc. -  that basic metadata is provided - all Concepts must have certain labels and definitions and ConceptScheme must indicate publishers etc.</sup> - and that Concepts indicate both the vocabulary which originally defined them and were they appear in the current vocabulary - where the defining and current vocabulary, or may not, be the same.
+      </p>
+      <p>
+        Other than that, vocabulary implementers using VocPub may implement standard SKOS vocabularies as they wish: the shat of the hierarchy is as they prefer; whether to use Collections or not etc.
+      </p>
+      <p>
+        This profile add just two Requirements on top of VocPub's:
+      </p>
+      <ol>
+        <li>All Concept, Concept Schema and Collection objects must present a literal identifier</li>
+        <li>All Concepts must use the <code>skos:inScheme</code> property</li>
+      </ol>
+      <p>
+        These two Requirements are implemented to ensure that the <a href="https://github.com/surroundaustralia/Prez/">VocPrez configuration of the Prez tool</a> - a Linked Data API - has all the data elements it needs in order to dpsplay vocabulary content well.
+      </p>
+      <p>
+        So this profile is a system-specific profile and will always be ket up-to-date with the VocPrez system's needs.
+      </p>
+      <p>
+        In the next section, this specification's two Requirements are formally identified and described. They are <span style="color:darkred;">indicated in red text</span>.
+      </p>
+    </section>
+    <section id="elements-reqs">
+      <h2>2. Elements &amp; Requirements</h2>
+      <p class="req">
+        2.1. Each SKOS Concept, ConceptScheme and Collection MUST provide exactly one identifier using the DCTERMS identifier property and typed as an XSD token
+      </p>
+      <p>
+        The VocPrez system needs to be able to construct short system URLs to each data object within it and for this it needs a unique identifier per object where the identifier contains no characters taht would be problematic in a URL path segment.
+      </p>
+      <p class="req">
+        2.2 Each SKOS Concept MUST indicate that it is within exactly one Concept Scheme by use of the SKOS inScheme property
+      </p>
+      <p>
+        While it is possible to indicate that a <code>skos:Concept</code> is placed within a <code>skos:ConceptScheme</code> in a couple of different ways, for instance with use of <code>skos:inScheme</code> or <code>skos:topConceptOf</code>, the VocPrez looks specifically for the <code>skos:inScheme</code> property when constructing concept heirarchies, so this property must be present.
+      </p>
+    </section>
+    <section id="references">
+      <h2>3. References</h2>
+      <dl>
+        <dt><a id="prof"></a>PROV</dt>
+        <dd>
+          Rob Atkinson; Nicholas J. Car (eds.). <em>The Profiles Vocabulary</em>. 18 December 2019. W3C Working Group Note. URL: <a href="https://www.w3.org/TR/dx-prof/">https://www.w3.org/TR/dx-prof/</a>
+        </dd>
+        <dt><a id="skos"></a>SKOS</dt>
+        <dd>
+          Alistair Miles; Sean Bechhofer (eds.). <em>SKOS Simple Knowledge Organization System Reference</em>. 18 August 2009. W3C Recommendation. URL: <a href="https://www.w3.org/TR/skos-reference/">https://www.w3.org/TR/skos-reference/</a>
+        </dd>
+        <dt><a id="skos-primer"></a>SKOS Primer</dt>
+        <dd>
+          Antoine Isaac; Ed Summers (eds.). <em>SKOS Simple Knowledge Organization System Primer</em>. 18 August 2009. W3C Note. URL: <a href="https://www.w3.org/TR/skos-primer/">https://www.w3.org/TR/skos-primer/</a>
+        </dd>
+        <dt><a id="semantic-web"></a>Semantic Web</dt>
+        <dd>
+          World Wide Web Consortium. <em>Semantic Web</em> 2015. Web Page. URL: <a href="https://www.w3.org/standards/semanticweb/">https://www.w3.org/standards/semanticweb/</a>, accessed 2020-06-14
+        </dd>
+      </dl>
+    </section>
+  </div><!-- #content -->
+  <div class="footer" style="grid-column:1;"></div>
+  <div class="footer" style="grid-column:2; display:grid; grid-column:70% 30%;">
+    <div style="grid-column:1;">
+      <img src="style/logo-dark.41edee3d.svg" alt="SURROUND white logo" />
+    </div>
+    <div style="grid-column:2;">
+      <div style="float:right;">
+        <h4>SURROUND Australia Pty Ltd</h4>
+        <p><a href="https://surroundaustralia.com">https://surroundaustralia.com</a></p>
+        <p style="font-style: italic;">
+          Level 9, Nishi Building<br />
+          2 Phillip Law Street, New Acton<br />
+          Canberra 2601<br />
+          Australia
+        </p>
+        <p><a href="info@surroundaustralia.com">info@surroundaustralia.com</a></p>
+        <p>
+          <a href="https://surroundaustralia.com/privacy-policy">Privacy Policy</a>
+        </p>
+        <p>&copy; SURROUND Australia Pty. Ltd. 2021</p>
+      </div>
+    </div>
+  </div><!-- #footer -->
+  <div class="footer" style="grid-column:3;"></div>
+</body>
+</html>
