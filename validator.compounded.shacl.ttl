@@ -10,11 +10,11 @@
 @base <https://w3id.org/profile/vocpub/validator/> .
 
 
-<https://w3id.org/profile/vocprez/compound-validator>
+<https://w3id.org/profile/vocprez/compounded-validator>
     a owl:Ontology ;
     dcterms:created "2022-03-20"^^xsd:date ;
     dcterms:creator <https://linked.data.gov.au/org/surround> ;
-    dcterms:modified "2022-03-20"^^xsd:date ;
+    dcterms:modified "2022-03-22"^^xsd:date ;
     dcterms:publisher <https://linked.data.gov.au/org/surround> ;
     owl:versionIRI <https://w3id.org/profile/vocprez/validator/1.0> ;
     owl:versionInfo "1.0" ;

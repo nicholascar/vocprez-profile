@@ -46,12 +46,12 @@ This profile is implemented by SURROUND Australia to allow for the validation of
     prof:hasRole role:validation
 .
 
-<https://w3id.org/profile/vocprez/compound-validator>
+<https://w3id.org/profile/vocprez/compounded-validator>
     skos:prefLabel "Compound Validator"@en ;
     dcterms:description "This profile's validator combined with the validators of the profiles that it profiles."@en ;
     dcterms:conformsTo <https://www.w3.org/TR/shacl/> ;
     dcterms:format "text/turtle" ;
-    prof:hasArtifact "https://w3id.org/profile/vocprez/compound-validator"^^xsd:anyURI ;
+    prof:hasArtifact "https://w3id.org/profile/vocprez/compounded-validator"^^xsd:anyURI ;
     prof:hasRole role:validation
 .
 
