@@ -10,14 +10,14 @@
 <https://w3id.org/profile/vocprez>
     a prof:Profile ;
     dcterms:created "2022-03-20"^^xsd:date ;
-    dcterms:creator <https://linked.data.gov.au/org/surround> ;
+    dcterms:creator <https://orcid.org/0000-0002-8742-7730> ;
     dcterms:modified "2022-03-20"^^xsd:date ;
-    dcterms:publisher <https://linked.data.gov.au/org/surround> ;
+    dcterms:publisher <https://orcid.org/0000-0002-8742-7730> ;
     skos:definition """This is a profile of another profile, the VocPub Profile, which profiles the Simple Knowledge Organization System (SKOS).
     
-This profile is implemented by SURROUND Australia to allow for the validation of vocabularies according to the needs of the VocPrez tool."""@en ;
-    owl:versionIRI <https://w3id.org/profile/vocprez/1.0> ;
-    owl:versionInfo "1.0" ;    
+This profile is implemented to allow for the validation of vocabularies according to the needs of the VocPrez tool."""@en ;
+    owl:versionIRI <https://w3id.org/profile/vocprez/1.1> ;
+    owl:versionInfo "1.1" ;    
     prof:hasResource 
         <https://w3id.org/profile/vocprez/spec> ,
         <https://w3id.org/profile/vocprez/validator> ,
@@ -27,7 +27,13 @@ This profile is implemented by SURROUND Australia to allow for the validation of
     prof:isTransitiveProfileOf <https://www.w3.org/TR/skos-reference/> ;
     skos:prefLabel "VocPrez Profile" ;
 .
-    
+
+<https://orcid.org/0000-0002-8742-7730>
+    a sdo:Person ;
+    sdo:name "Nicholas J. Car" ;
+    sdo:email "nick@kurrawong.net"^^xsd:anyURI ;
+.
+
 <https://w3id.org/profile/vocprez/spec>
     skos:prefLabel "Specification Document"@en ;
     dcterms:description "The normative, human-readable, listing of profile requirements"@en ;
@@ -60,9 +66,4 @@ This profile is implemented by SURROUND Australia to allow for the validation of
     dcterms:description "Code repository storing all Profile artifacts"@en ;
     prof:hasArtifact "https://w3id.org/profile/vocprez/repo"^^xsd:anyURI ;
     prof:hasRole role:repository
-.
-
-<https://linked.data.gov.au/org/surround> a sdo:Organization ;
-    sdo:name "SURROUND Australia Pty Ltd" ;
-    sdo:url "https://surroundaustralia.com"^^xsd:anyURI ;
 .

@@ -13,13 +13,19 @@
 <https://w3id.org/profile/vocprez/compounded-validator>
     a owl:Ontology ;
     dcterms:created "2022-03-20"^^xsd:date ;
-    dcterms:creator <https://linked.data.gov.au/org/surround> ;
+    dcterms:creator <https://orcid.org/0000-0002-8742-7730> ;
     dcterms:modified "2022-03-22"^^xsd:date ;
-    dcterms:publisher <https://linked.data.gov.au/org/surround> ;
+    dcterms:publisher <https://orcid.org/0000-0002-8742-7730> ;
     owl:versionIRI <https://w3id.org/profile/vocprez/validator/1.0> ;
     owl:versionInfo "1.0" ;
     skos:definition "This profile's validator combined with the validators of the profiles that it profiles."@en ;
     skos:prefLabel "VocPrez Compound Validator"@en ;
+.
+
+<https://orcid.org/0000-0002-8742-7730>
+    a sdo:Person ;
+    sdo:name "Nicholas J. Car" ;
+    sdo:email "nick@kurrawong.net"^^xsd:anyURI ;
 .
 
 <https://w3id.org/profile/vocprez/validator/Requirement-1>

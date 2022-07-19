@@ -7,7 +7,7 @@ body, html {
 body {
     display:grid;
     grid-template-columns: 1fr 3fr 1fr ;
-    grid-template-rows: 140px auto 400px;
+    grid-template-rows: 140px auto 100px;
 
     color: rgb(50, 50, 50);
     font-family: Spartan, Arial, sans-serif;
@@ -19,8 +19,8 @@ body {
 }
 
 .header {
-    background-color: rgb(35, 31, 32);
-    border-bottom: solid 10px rgb(154, 74, 255);
+    background-color: #eee;
+    border-bottom: solid 10px #ccc;
 }
 
 #slogan {
@@ -69,12 +69,12 @@ h4 {
 }
 
 .footer {
-    background-color: rgb(223, 227, 229);
+    background-color: #eee;
     padding-top:30px;
 }
 
 a {
-    color: rgb(154, 74, 255);
+    color: rgb(74, 171, 255);
     text-decoration: none;
 }
 
