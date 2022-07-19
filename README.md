@@ -1,5 +1,5 @@
 # VocPrez Profile
-This is a *profile* of another profile, the [VocPub Profile](https://w3id.org/profile/vocpub), which profiles the [Simple Knowledge Organization System (SKOS)](https://www.w3.org/TR/skos-reference/). It is implemented by [SURROUND Australia](https://surroundaustralia.com) to allow for the validation of vocabularies according to the needs of the [VocPrez](https://github.com/surroundaustralia/Prez/) tool.
+This is a *profile* of another profile, the [VocPub Profile](https://w3id.org/profile/vocpub), which profiles the [Simple Knowledge Organization System (SKOS)](https://www.w3.org/TR/skos-reference/). It is implemented to allow for the validation of vocabularies according to the needs of the [VocPrez](https://github.com/surroundaustralia/Prez/) tool.
 
 By *profile*, what is meant here is "A specification that constrains, extends, combines, or provides guidance or explanation about the usage of other specifications." (from [PROF](https://www.w3.org/TR/dx-prof/#definitions)) and, here the *other specifications* are VocPub & SKOS.
 
@@ -17,7 +17,7 @@ This profile is hosted online in [Linked Data](https://www.w3.org/standards/sema
 ### Specification
 This profile's _specification_ - the resource that contains the normative rules - is within the file [specification.html](specification.html) and it is able to be viewed online at:
 
-* <https://surroundaustralia.github.io/vocprez-profile/specification.html>
+* <https://nicholascar.com/vocprez-profile/specification.html>
 
 ### Validator
 This profile's rules, as defined in the _specification_ are presented for machine validation of RDF vocabularies in the shape file [validator.shacl.ttl](validator.shacl.ttl) which conforms to the [SHACL](https://www.w3.org/TR/shacl/) standard.
@@ -35,25 +35,20 @@ To cite this profile, please use the following (formulated in [BibTex](http://ww
 
 ```
 @software{vocpub-profile,
-  author = {{SURROUND Australia Pty Ltd}},
+  author = {{Nicholas J. Car}},
   title = {{VocPrez Profile}},
-  version = {1.0},
+  version = {1.1},
   date = {2022},
-  publisher = {{SURROUND Australia Pty Ltd}},
   url = {https://w3id.org/profile/vocprez}
 }
 ``` 
 
 
 ## Contact
-*publisher:*  
-![](style/logo-white.144b0ef3.svg)  
-**SURROUND Australia Pty. Ltd.**  
-<https://surroundaustralia.com>  
 
 *creator:*  
 **Dr Nicholas J. Car**  
-*Data Systems Architect*  
-SURROUND Australia Pty. Ltd.  
-<nicholas.car@surroudaustralia.com>  
+*Data Architect*  
+Kurrawong AI  
+<nick@kurrawong.net>  
 <https://orcid.org/0000-0002-8742-7730>
